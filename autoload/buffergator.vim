@@ -1882,7 +1882,7 @@ function! buffergator#UpdateBuffergator(event, affected)
 
     for l:gator in l:buffergators
         "Do not consider popup buffers
-         if l:gator.buftype == 'popup'
+         if exists("l:gator.buftype") && l:gator.buftype == 'popup'
            continue
          endif
         if bufwinnr(l:gator) > 0
